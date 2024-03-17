@@ -1,0 +1,56 @@
+<html>
+  <head>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://d3js.org/d3-geo.v3.min.js"></script>
+    <script src="https://d3js.org/d3-geo-projection.v3.min.js"></script>
+    <script src="https://d3js.org/topojson.v3.min.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>weekly-challenge-9-dragon-ball</title>
+  </head>
+  <body>
+    <div id="panelsContainer">
+      <div id="startPointPanel">
+        <h3>Starting Point:</h3>
+        <label for="startPointType">Select initial dragonball by:</label>
+        <select id="startPointType">
+          <option value="latLng">Latitude/Longitude</option>
+          <option value="address">Address</option>
+        </select>
+        <div id="latLngInputs" class="input-group">
+          <label for="newStartLat">Latitude:</label>
+          <input type="number" id="newStartLat" step="any" value="0" />
+          <label for="newStartLng">Longitude:</label>
+          <input type="number" id="newStartLng" step="any" value="0" />
+        </div>
+        <div id="addressInput" class="input-group" style="display: none">
+          <label for="startAddress">Address:</label>
+          <input type="text" id="startAddress" />
+        </div>
+        <button id="updateStartPoint" class="btn">Update Starting Point</button>
+      </div>
+      <div id="controlPanel">
+        <label for="movementToggle">Movement:</label>
+        <input type="checkbox" id="movementToggle" checked />
+        <br />
+        <label for="interpolationToggle">Interpolation:</label>
+        <input type="checkbox" id="interpolationToggle" checked />
+        <br />
+        <label for="showPathsToggle">Show paths:</label>
+        <input type="checkbox" id="showPathsToggle" />
+        <br />
+        <br />
+        <label for="projectionSelect">Projection:</label>
+        <select id="projectionSelect"></select>
+      </div>
+    </div>
+    <div id="projectionPanelsContainer">
+      <div id="projectioncontainer"></div>
+      <div id="locationPanel">
+        <h3>Identified Locations:</h3>
+        <ul id="locationList"></ul>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
